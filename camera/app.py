@@ -22,7 +22,6 @@ def on_image(msg):
     
     cv_image = bridge.imgmsg_to_cv2(msg, desired_encoding = "passthrough")
     frame = cv2.imencode(".jpg",cv_image)[1].tobytes()
-    frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
     event.set()
 
 # 노드 초기화 과정
